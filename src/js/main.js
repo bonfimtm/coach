@@ -1,6 +1,9 @@
 // Import our custom CSS
 import '../scss/styles.scss';
 
+// Import only the Bootstrap components we need
+import { Modal } from 'bootstrap';
+
 import * as modernizr from './modernizr-custom';
 
 // Import the functions you need from the SDKs you need

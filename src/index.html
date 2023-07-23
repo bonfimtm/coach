@@ -31,8 +31,7 @@
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="#" class="nav-link px-2 link-secondary">Início</a></li>
                 <li><a href="#cursos" class="nav-link px-2">Cursos</a></li>
-                <li><a href="#" class="nav-link px-2">Sobre Nós</a></li>
-                <li><a href="#" class="nav-link px-2">Contato</a></li>
+                <li><a href="#contato" class="nav-link px-2">Contato</a></li>
             </ul>
 
             <div class="col-md-3 text-end">
@@ -64,116 +63,35 @@
         </section>
 
         <section class="py-0 text-center container">
-            <h1 id="cursos" class="fw-light">Cursos</h1>
+            <h1 id="cursos" class="fw-light m-4">Cursos</h1>
+            <div class="nb-separator"></div>
             <div class="album py-0 bg-body-tertiary">
                 <div class="container">
-
-                    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="row row-cols-1 row-cols-sm-1 row-cols-md-1 g-3">
                         <div class="col">
                             <div class="card shadow-sm">
-                                <div id="bg-constitucional" class="nb-card-bg"></div>
+                                <div id="bg-licitacoes" class="nb-card-bg"></div>
                                 <div class=" card-body">
-                                    <h2 class="h2 fw-light">Direito Constitucional</h2 class="h2">
-                                    <p class="card-text">Princípios fundamentais, direitos e garantias fundamentais,
-                                        organização do Estado, organização dos Poderes, funções essenciais à justiça,
-                                        controle de constitucionalidade, entre outros.</p>
+                                    <h2 class="h2 fw-light">Nova Lei de Licitações</h2>
+                                    <p class="lead">1 e 2 de Setembro de 2023</p>
+                                    <p class="card-text">O curso sobre a nova lei de licitações (lei n°.14.133-2021) tem
+                                        como principal objetivo capacitar gestores, colaboradores envolvidos nas
+                                        unidades técnicas de licitação e contratos de órgãos, entidades públicas ou
+                                        privadas detenham conhecimentos necessários à realização de contratações
+                                        mediante a Nova Lei de Licitações, além de capacitar e atualizar agentes
+                                        públicos e privados quanto às novidades vindouras. Objetiva-se ainda o ensino
+                                        teórico e prático da Nova lei, incluindo simulações práticas. Além disso, visa
+                                        fornecer as ferramentas necessárias para a aplicação correta da legislação,
+                                        garantindo a eficiência e transparência nos processos licitatórios.
+                                    </p>
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="btn-group">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-secondary">Detalhes</button>
+                                            <button type="button" class="btn btn-sm btn-outline-primary"
+                                                data-bs-toggle="modal" data-bs-target="#modalLicitacoes">
+                                                Detalhes
+                                            </button>
                                         </div>
-                                        <small class="text-body-secondary">20 h</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <div id="bg-penal" class="nb-card-bg"></div>
-                                <div class="card-body">
-                                    <h2 class="h2 fw-light">Direito Penal</h2 class="h2">
-                                    <p class="card-text">Teoria do crime, teoria da pena, crimes em espécie,
-                                        contravenções
-                                        penais, legislação penal especial, entre outros.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-secondary">Detalhes</button>
-                                        </div>
-                                        <small class="text-body-secondary">40 h</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <div id="bg-civil" class="nb-card-bg"></div>
-                                <div class="card-body">
-                                    <h2 class="h2 fw-light">Direito Civil</h2 class="h2">
-                                    <p class="card-text">Parte geral, direito das obrigações, direito de empresa,
-                                        direito
-                                        das coisas, direito de família, direito das sucessões, entre outros.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-secondary">Detalhes</button>
-                                        </div>
-                                        <small class="text-body-secondary">36 h</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <div id="bg-empresarial" class="nb-card-bg"></div>
-                                <div class="card-body">
-                                    <h2 class="h2 fw-light">Direito Empresarial</h2 class="h2">
-                                    <p class="card-text">Teoria geral do direito empresarial, sociedades, títulos de
-                                        crédito, falência e recuperação judicial, entre outros.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-secondary">Detalhes</button>
-                                        </div>
-                                        <small class="text-body-secondary">36 h</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <div id="bg-tributario" class="nb-card-bg"></div>
-                                <div class="card-body">
-                                    <h2 class="h2 fw-light">Direito Tributário</h2 class="h2">
-                                    <p class="card-text">Princípios, competência tributária, espécies tributárias,
-                                        obrigação
-                                        tributária, crédito tributário, administração tributária, entre outros..</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-secondary">Detalhes</button>
-                                        </div>
-                                        <small class="text-body-secondary">36 h</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="card shadow-sm">
-                                <div id="bg-trabalho" class="nb-card-bg"></div>
-                                <div class="card-body">
-                                    <h2 class="h2 fw-light">Direito do Trabalho</h2 class="h2">
-                                    <p class="card-text">Princípios, direitos e deveres das partes, contrato de
-                                        trabalho,
-                                        jornada de trabalho, remuneração, estabilidade e garantias provisórias, dissídio
-                                        coletivo, entre outros.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <div class="btn-group">
-                                            <button type="button"
-                                                class="btn btn-sm btn-outline-secondary">Detalhes</button>
-                                        </div>
-                                        <small class="text-body-secondary">36 h</small>
+                                        <small class="text-body-secondary">16 h</small>
                                     </div>
                                 </div>
                             </div>
@@ -185,20 +103,69 @@
 
     </main>
 
+    <!-- Modal - Nova Lei de Licitações -->
+    <div class="modal fade" id="modalLicitacoes" tabindex="-1" aria-labelledby="modalLicitacoesLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalLicitacoesLabel">Curso Sobre a Nova Lei de Licitações</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="lead p-1">Conteúdo Pogramático</p>
+                    O curso abordará temas essenciais para uma compreensão abrangente da nova lei, incluindo:
+                    <ul class="list-group m-3">
+                        <li class="list-group-item">Introdução à Nova Lei de Licitações: princípios e fundamentos</li>
+                        <li class="list-group-item">Modalidades e tipos de licitação sob a nova legislação</li>
+                        <li class="list-group-item">Fases e etapas do processo licitatório</li>
+                        <li class="list-group-item">Inovações e alterações em relação à legislação anterior</li>
+                        <li class="list-group-item">
+                            Responsabilidades dos agentes envolvidos no processo licitatório
+                        </li>
+                        <li class="list-group-item">
+                            Sanções e penalidades aplicáveis em caso de descumprimento da lei
+                        </li>
+                        <li class="list-group-item">
+                            Casos práticos e exercícios para aplicação dos conhecimentos
+                            adquiridos
+                        </li>
+                    </ul>
+                    <p class="lead p-1">Formato do Curso</p>
+                    <p>
+                        O curso será ministrado em formato <strong>presencial</strong>, com aulas expositivas e
+                        dinâmicas interativas
+                        para garantir o melhor aproveitamento dos participantes. A carga horária total será
+                        de 16 (dezesseis) horas, divididas em 2 (dois) dias de capacitação.
+                    </p>
+                    <p class="lead p-1">Local</p>
+                    <p>O curso será realizado nas instalações da nossa instituição.</p>
+                    <p class="lead p-1">Material Fornecido</p>
+                    <p>Material Didático, Certificado, Coffe Break e suporte jurídico.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary">Inscrever</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="text-body-secondary py-5">
         <div class="container">
-            <p class="float-end mb-1">
-                <a href="#">Voltar ao topo</a>
-            </p>
+            <h1 id="contato" class="fw-light m-4 text-center">Contato</h1>
             <div class="col mb-0">
                 <div class="row">
-                    <p>
+                    <p id="contato">
                         Rua Arlindo Muniz Maia Neto (Rua Teófilo Faustino Braga) 102, 44775-000
                         <br><em>Ao lado do Salão do Reino das Testemunhas de Jeová</em>
                         <br>Filadélfia - BA
                     </p>
                 </div>
             </div>
+            <p class="float-end mb-1">
+                <a href="#">Voltar ao topo</a>
+            </p>
         </div>
     </footer>
 
