@@ -94,7 +94,7 @@ $success: #7952b3;
 @import "icon-list";
 
 body {
-    padding: 1.5rem;
+    padding: 0 1.5rem;
 }
 
 .bd-placeholder-img {
@@ -175,6 +175,31 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 256px;
+}
+
+.nb-separator,
+.nb-separator-break {
+    height: 4px;
+    transform: skew(50deg);
+    -webkit-transform: skew(50deg);
+    -moz-transform: skew(50deg);
+    -o-transform: skew(50deg);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.nb-separator {
+    width: 200px;
+    background: $nb_primary;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.nb-separator-break {
+    width: 4px;
+    background-color: white;
+    position: relative;
+    top: -4px;
 }
 
 #bg-licitacoes {
