@@ -56,20 +56,8 @@ module.exports = {
       },
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
-      // {
-      //   test: /\.(png|jpe?g|gif|svg|webp)$/i,
-      //   use: [
-      //     {
-      //       loader: 'url-loader',
-      //       options: {
-      //         limit: 8192, // Inline files smaller than 8KB, fallback to file-loader for larger files
-      //         // name: 'assets/images/[name].[hash].[ext]', // Output path for the images
-      //       },
-      //     },
-      //   ],
-      // },
     ]
   }
 }
