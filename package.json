@@ -6,6 +6,7 @@
   "scripts": {
     "start": "webpack serve --mode development --watch-files src",
     "build": "webpack build --mode=production",
+    "deploy": "firebase deploy",
     "test": "npm run build"
   },
   "repository": {
@@ -20,12 +21,14 @@
   "homepage": "https://github.com/bonfimtm/coach#readme",
   "dependencies": {
     "@popperjs/core": "^2.11.7",
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.2.3",
+    "firebase": "^10.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
+    "firebase-tools": "^12.4.5",
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.1",
     "postcss-loader": "^7.3.0",
