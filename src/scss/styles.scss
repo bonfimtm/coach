@@ -1,0 +1,202 @@
+// Override Bootstrap's Sass default variables
+//
+// Nearly all variables in Bootstrap are written with the `!default` flag.
+// This allows you to override the default values of those variables before
+// you import Bootstrap's source Sass files.
+//
+// Overriding the default variable values is the best way to customize your
+// CSS without writing _new_ styles. For example, change you can either change
+// `$body-color` or write more CSS that override's Bootstrap's CSS like so:
+// `body { color: red; }`.
+
+
+//
+// Bring in Bootstrap
+//
+
+// Option 1
+//
+// Import all of Bootstrap's CSS
+
+// @import "bootstrap/scss/bootstrap";
+
+// Option 2
+//
+// Place variable overrides first, then import just the styles you need. Note that some stylesheets are required no matter what.
+
+$nb_primary: rgb(162, 40, 68);
+$nb_grey_light: rgb(238, 238, 238);
+$nb_grey_dark: rgb(231, 231, 231);
+
+// Toggle global options
+$enable-gradients: true;
+$enable-shadows: true;
+
+$offcanvas-box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+
+// Customize some defaults
+$primary: rgb(162, 40, 68);
+$body-color: #333;
+$body-bg: #fff;
+$border-radius: .4rem;
+$success: #7952b3;
+
+// Required
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/dropdown";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/breadcrumb";
+@import "bootstrap/scss/accordion";
+@import "bootstrap/scss/pagination";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+@import "bootstrap/scss/tooltip";
+@import "bootstrap/scss/popover";
+@import "bootstrap/scss/carousel";
+@import "bootstrap/scss/spinners";
+@import "bootstrap/scss/offcanvas"; // Requires transitions
+@import "bootstrap/scss/placeholders";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
+
+
+//
+// Custom styles
+//
+
+@import "icon-list";
+
+body {
+    padding: 1.5rem;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+.b-example-divider {
+    width: 100%;
+    height: 3rem;
+    background-color: rgba(0, 0, 0, .1);
+    border: solid rgba(0, 0, 0, .15);
+    border-width: 1px 0;
+    box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+}
+
+.b-example-vr {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 100vh;
+}
+
+.bi {
+    vertical-align: -.125em;
+    fill: currentColor;
+}
+
+.nav-scroller {
+    position: relative;
+    z-index: 2;
+    height: 2.75rem;
+    overflow-y: hidden;
+}
+
+.nav-scroller .nav {
+    display: flex;
+    flex-wrap: nowrap;
+    padding-bottom: 1rem;
+    margin-top: -1px;
+    overflow-x: auto;
+    text-align: center;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+}
+
+.btn-bd-primary {
+    --bd-violet-bg: #712cf9;
+    --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+    --bs-btn-font-weight: 600;
+    --bs-btn-color: var(--bs-white);
+    --bs-btn-bg: var(--bd-violet-bg);
+    --bs-btn-border-color: var(--bd-violet-bg);
+    --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-hover-bg: #6528e0;
+    --bs-btn-hover-border-color: #6528e0;
+    --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+    --bs-btn-active-color: var(--bs-btn-hover-color);
+    --bs-btn-active-bg: #5a23c8;
+    --bs-btn-active-border-color: #5a23c8;
+}
+
+.bd-mode-toggle {
+    z-index: 1500;
+}
+
+.nb-card-bg {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 256px;
+}
+
+#bg-constitucional {
+    background-image: url('../assets/images/mikhail-pavstyuk-EKy2OTRPXdw-unsplash.jpg');
+}
+
+#bg-penal {
+    background-image: url('../assets/images/tingey-injury-law-firm-yCdPU73kGSc-unsplash.jpg');
+}
+
+#bg-civil {
+    background-image: url('../assets/images/colin-lloyd-gcfvs__17dw-unsplash.jpg');
+}
+
+#bg-empresarial {
+    background-image: url('../assets/images/altumcode-PNbDkQ2DDgM-unsplash.jpg');
+}
+
+#bg-tributario {
+    background-image: url('../assets/images/ibrahim-boran-3ijHgGTSDi8-unsplash.jpg');
+}
+
+#bg-trabalho {
+    background-image: url('../assets/images/jeriden-villegas-VLPUm5wP5Z0-unsplash.jpg');
+}
