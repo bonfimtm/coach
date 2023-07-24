@@ -180,9 +180,9 @@ body {
 }
 
 .nb-card-bg {
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     height: 256px;
 }
 
@@ -212,9 +212,9 @@ body {
 }
 
 #bg-licitacoes {
-    background-image: url('../assets/images/ibrahim-boran-3ijHgGTSDi8-unsplash.webp');
+    background-image: url('../assets/images/curso-licitacoes-sm.webp');
 }
 
 .nowebp#bg-licitacoes {
-    background-image: url('../assets/images/ibrahim-boran-3ijHgGTSDi8-unsplash.jpg');
+    background-image: url('../assets/images/curso-licitacoes-sm.jpg');
 }
