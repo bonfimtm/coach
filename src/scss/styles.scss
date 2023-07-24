@@ -131,6 +131,15 @@ body {
     fill: currentColor;
 }
 
+body {
+    font-family: "CrimsonText";
+}
+
+@font-face {
+    font-family: CrimsonText;
+    src: local("CrimsonText"), url(../assets/fonts/CrimsonText-Regular.ttf);
+}
+
 .nav-scroller {
     position: relative;
     z-index: 2;

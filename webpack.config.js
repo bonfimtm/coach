@@ -55,6 +55,13 @@ module.exports = {
         type: 'asset/resource',
       },
       {
+        test: /\.(woff(2)?|eot|ttf|otf|svg|)$/,
+        type: 'asset/resource',
+        generator: {
+          filename: '[hash][ext][query]',
+        },
+      },
+      {
         test: /\.html$/i,
         loader: 'html-loader',
       },
