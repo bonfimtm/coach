@@ -1,5 +1,5 @@
 #!/bin/sh
-for file in src/assets/images/*
+for file in $1
 do
     cwebp -q 50 "$file" -o "${file%.*}.webp"
 done
