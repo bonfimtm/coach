@@ -1,0 +1,19 @@
+{
+    "editor.tabSize": 2,
+    "terminal.integrated.profiles.osx": {
+        "zsh": {
+            "path": "/bin/zsh",
+            "args": [
+                "-l",
+                "-i"
+            ]
+        }
+    },
+    "eslint.validate": [
+        "typescript"
+    ],
+    "eslint.workingDirectories": [
+        "",
+        "functions",
+    ]
+}
