@@ -11,9 +11,18 @@ import * as logger from 'firebase-functions/logger';
 import { onRequest } from 'firebase-functions/v2/https';
 
 import { findAllArticleImages, findAllArticles } from './article';
+import { findAllPosts } from './post';
 
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
+
+export const posts = onRequest(async (request, response) => {
+  logger.info('Fetching all posts');
+  const blogId = process.env.BLOGGER_BLOG_ID;
+  const articles = await findAllPosts(blogId);
+  logger.info(`Fetched ${articles.length} posts`);
+  response.send(articles);
+});
 
 export const articles = onRequest(async (request, response) => {
   logger.info('Fetching all articles');
