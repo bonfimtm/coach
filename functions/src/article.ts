@@ -2,6 +2,8 @@ import { initializeApp } from 'firebase-admin/app';
 import { getDownloadURL, getStorage } from 'firebase-admin/storage';
 import { JWT } from 'google-auth-library';
 import { GoogleSpreadsheet } from 'google-spreadsheet';
+import * as path from 'path';
+import { any, identity, ifElse, isNotNil } from 'ramda';
 
 initializeApp();
 
@@ -52,11 +54,10 @@ const cleanUpCellElement = (cellElement: string) => cellElement.trim().toLowerCa
 
 const cleanUpCellText = (cellContent: string) => cellContent.trim();
 
-export const findAllArticles = async (sheetMaxRange = 'A1:A100'): Promise<Article[]> => {
+export const findAllArticles = async (sheetMaxRange = 'A1:A100'): Promise<Partial<Article>[]> => {
   const serviceAccountAuth = getServiceAccountAuth();
   const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID ?? '', serviceAccountAuth);
   await doc.loadInfo();
-  const bucket = getStorage().bucket();
   const articles = await Promise.all(
     doc.sheetsByIndex
       .map(async (sheet) => {
@@ -67,10 +68,6 @@ export const findAllArticles = async (sheetMaxRange = 'A1:A100'): Promise<Articl
         const live = cellValueToBoolean(firstValueRow.get('live'));
         const title = cleanUpCellText(firstValueRow.get('title'));
         const link = cleanUpCellText(firstValueRow.get('link'));
-        const imageFilename = cleanUpCellText(firstValueRow.get('img'));
-        const imageFileRef = bucket.file(`img/${imageFilename}`);
-        const imageFileExists = await imageFileRef.exists();
-        const imageUrl = imageFileExists ? await getDownloadURL(imageFileRef) : null;
         const segmentRows = rows
           .map((row) => {
             return {
@@ -81,8 +78,39 @@ export const findAllArticles = async (sheetMaxRange = 'A1:A100'): Promise<Articl
         const segments = segmentRows.filter((segment) => {
           return (segmentTypeValues as string[]).includes(segment.element) && !!segment.content;
         });
-        return { id, live, title, imageUrl, link, segments } as Article;
+        return { id, live, title, link, segments } as Article;
       })
   );
   return articles;
 };
+
+export const findAllArticleImages = async (
+  articleId: number | null,
+  imageDir = 'img',
+  sheetMaxRange = 'A1:A100',
+): Promise<Partial<Article>> => {
+  const serviceAccountAuth = getServiceAccountAuth();
+  const doc = new GoogleSpreadsheet(process.env.GOOGLE_SHEET_ID ?? '', serviceAccountAuth);
+  await doc.loadInfo();
+  const imageUrl = await ifElse(
+    () => isNotNil(articleId) && !isNaN(articleId),
+    async () => {
+      const id = articleId as number;
+      if (id < 0 || id > doc.sheetCount - 1) {
+        return null;
+      }
+      const sheet = doc.sheetsByIndex[id];
+      await sheet.loadCells(sheetMaxRange);
+      const rows = await sheet.getRows();
+      const firstValueRow = rows[0];
+      const bucket = getStorage().bucket();
+      const imageFilename = cleanUpCellText(firstValueRow.get(imageDir));
+      const imageFileRef = bucket.file(path.join(imageDir, imageFilename));
+      const imageFileExists = any(identity, await imageFileRef.exists());
+      return imageFileExists ? await getDownloadURL(imageFileRef) : null;
+    },
+    async () => null,
+  )();
+  return { imageUrl } as Partial<Article>;
+};
+
