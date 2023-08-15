@@ -16,7 +16,9 @@ import { findAllPosts } from './post';
 // Start writing functions
 // https://firebase.google.com/docs/functions/typescript
 
-export const posts = onRequest(async (request, response) => {
+const cors = [new RegExp(process.env.CORS_ALLOW_REGEX || '')];
+
+export const posts = onRequest({ cors }, async (request, response) => {
   logger.info('Fetching all posts');
   const blogId = process.env.BLOGGER_BLOG_ID;
   const articles = await findAllPosts(blogId);
@@ -24,14 +26,14 @@ export const posts = onRequest(async (request, response) => {
   response.send(articles);
 });
 
-export const articles = onRequest(async (request, response) => {
+export const articles = onRequest({ cors }, async (request, response) => {
   logger.info('Fetching all articles');
   const articles = await findAllArticles();
   logger.info(`Fetched ${articles.length} articles`);
   response.send(articles);
 });
 
-export const articleImage = onRequest(async (request, response) => {
+export const articleImage = onRequest({ cors }, async (request, response) => {
   logger.info('Fetching all article images');
   const articleQuery = request.query?.articleId as string ?? '';
   const articleId = parseInt(articleQuery);
